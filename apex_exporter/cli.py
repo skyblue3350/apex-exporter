@@ -54,14 +54,14 @@ def apex_process_request(platform, name):
                 segment["stats"]["rankScore"]["metadata"]["rankName"]
             ).set(segment["stats"]["rankScore"]["value"])
 
-            for key in segment:
+            for key in segment["stats"]:
                 if not "season" in key:
                     continue
 
                 player_metrics["apex_stats_season_kill"].labels(
                     player_name,
                     key,
-                ).set(segment[key]["value"])
+                ).set(segment["stats"][key]["value"])
 
     update_api_info(res.headers)
 
