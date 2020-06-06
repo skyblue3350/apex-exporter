@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  apex-exporter:
+    image: skyblue3350/apex-exporter
+    build: .
+    ports:
+      - "9316:9316"
+    environment:
+      TOKEN: ${TOKEN}
+
