@@ -69,7 +69,7 @@ def apex_process_request(platform, name):
 @app.route("/metrics")
 def metrics():
     platform = request.args.get("platform")
-    name = request.args.get("name")
+    name = request.args.get("target")
 
     if platform is None or name is None:
         abort(400)
